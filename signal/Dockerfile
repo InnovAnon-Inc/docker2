@@ -15,8 +15,7 @@ RUN apt-fast install -y gnupg2 curl \
  && apt-fast update \
  && apt-fast install -y signal-desktop
 
-RUN apt-fast purge -y apt-utils apt-transport-https software-properties-common apt-fast pigz pbzip2 plzip pixz gnupg2 curl \
- && apt-fast autoremove --purge -y \
+RUN apt-fast purge --autoremove -y apt-utils apt-transport-https software-properties-common apt-fast pigz pbzip2 plzip pixz gnupg2 curl \
  && rm -rf /var/lib/apt/lists/*
 
 RUN adduser docker-user
